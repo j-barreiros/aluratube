@@ -1,6 +1,8 @@
 {
     "name": "João Barreiros (j-barreiros)",
     "description": "Front-End Developer",
+    "banner":"https://images.unsplash.com/photo-1504333638930-c8787321eee0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "bannerAlt":"A photo of a nebula",
     "github": "j-barreiros",
     "playlists": {
       "jogos": [
@@ -130,5 +132,15 @@
           "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
         }
       ]
-    }
+    },
+    "favorites":[
+      {
+        "userName":"omariosouto",
+        "profilePicture":"omariosouto"
+      },
+      {
+        "userName":"peas",
+        "profilePicture":"peas"
+      }
+    ]
   }
