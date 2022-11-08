@@ -23,8 +23,7 @@ const StyledTimeline = styled.div`
     padding: 0;
     overflow: hidden;
     padding: 16px;
-    div {
-      
+    div {   
       width: calc(100vw - 16px * 4);
       display: grid;
       grid-gap: 16px;
@@ -48,29 +47,29 @@ const StyledTimeline = styled.div`
 
 
 export function Timeline(props) {
-    const playlistNames = Object.keys(props.playlists);
-    return (
-        <StyledTimeline>
-            {playlistNames.map((playlistName, index) => {
-                const videos = props.playlists[playlistName];
+  const playlistNames = Object.keys(props.playlists);
+  return (
+    <StyledTimeline>
+      {playlistNames.map((playlistName, index) => {
+        const videos = props.playlists[playlistName];
+        return (
+          <section key={index}>
+            <h2>{playlistName}</h2>
+            <div>
+              {videos.map((video, index) => {
                 return (
-                    <section key={index}>
-                        <h2>{playlistName}</h2>
-                        <div>
-                            {videos.map((video, index) => {
-                                return (
-                                    <a href={video.url} key={index}>
-                                        <span>
-                                            <img src={video.thumb} />
-                                            {video.title}
-                                        </span>
-                                    </a>
-                                )
-                            })}
-                        </div>
-                    </section>
+                  <a href={video.url} key={index}>
+                    <span>
+                      <img src={video.thumb} />
+                      {video.title}
+                    </span>
+                  </a>
                 )
-            })}
-        </StyledTimeline>
-    )
+              })}
+            </div>
+          </section>
+        )
+      })}
+    </StyledTimeline>
+  )
 }
