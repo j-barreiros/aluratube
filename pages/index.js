@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import config from "../config.json"
 import styled from "styled-components"
 import { CSSReset } from "../src/components/CSSReset";
@@ -6,14 +7,17 @@ import { Timeline } from "../src/components/Timeline";
 import Favorites from "../src/components/Favorites";
 
 export default function HomePage() {
+
+    const [searchValue, setSearchValue] = useState('');
+
     return (
         <>
             <CSSReset />
             <div>
-                <Menu />
+                <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
                 <Banner bannerUrl={config.banner} bannerAlt={config.bannerAlt} />
                 <Header />
-                <Timeline playlists={config.playlists} />
+                <Timeline searchValue={searchValue} playlists={config.playlists} />
                 <Favorites favorites={config.favorites} />
             </div>
         </>

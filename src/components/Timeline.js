@@ -56,7 +56,7 @@ export function Timeline(props) {
           <section key={index}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video, index) => {
+              {videos.filter((video) => video.title.toLowerCase().includes(props.searchValue.toLowerCase())).map((video, index) => {
                 return (
                   <a href={video.url} key={index}>
                     <span>
