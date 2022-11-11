@@ -1,4 +1,6 @@
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
+import DarkModeSwitch from "./components/DarkmodeSwitch";
 import Search from "./components/Search";
 
 const StyledMenu = styled.header`
@@ -26,12 +28,14 @@ const StyledMenu = styled.header`
 `;
 
 export default function Menu({searchValue, setSearchValue}) {
+
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
         <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <DarkModeSwitch />
     </StyledMenu>
   );
 }

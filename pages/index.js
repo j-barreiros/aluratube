@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import config from "../config.json"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { Timeline } from "../src/components/Timeline";
@@ -12,7 +12,6 @@ export default function HomePage() {
 
     return (
         <>
-            <CSSReset />
             <div>
                 <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
                 <Banner bannerUrl={config.banner} bannerAlt={config.bannerAlt} />
@@ -25,6 +24,9 @@ export default function HomePage() {
 }
 
 const StyledHeader = styled.div`
+
+    background-color: ${({theme}) => theme.backgroundLevel1};
+
     img {
         width: 80px;
         height: 80px;
@@ -39,9 +41,14 @@ const StyledHeader = styled.div`
         gap: 16px;
     }
 
-    .user-info > p {
-        color: #666;
+    .user-info  p {
+        color: ${({theme}) => theme.textColorBase};
         font-weight: 400;
+        opacity: 0.4;
+    }
+
+    .user-info h2 {
+        color: ${({theme}) => theme.textColorBase};
     }
 `;
 

@@ -5,10 +5,12 @@ const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
+  background-color: ${({theme}) => theme.backgroundBase};
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
     text-transform: capitalize;
+    color: ${({theme}) => theme.textColorBase}
   }
   img {
     aspect-ratio: 16/9;
@@ -23,7 +25,8 @@ const StyledTimeline = styled.div`
     padding: 0;
     overflow: hidden;
     padding: 16px;
-    div {   
+    div {
+      
       width: calc(100vw - 16px * 4);
       display: grid;
       grid-gap: 16px;
